@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylsheet" href="./style.css">
+  <title>Modernize Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Modernize</h1>
+    </header>
+    <main class="content">
+      <section class="form-section">
+        <h1>Enter to win a 3rd generation Nest Learning Thermostat worth $249.</h1>
+        <form id="solar-form">
+          <input id="name" type="text" name="name" placeholder="Name" required minlength="2">
+          <div class="address">
+            <input id="city" type="text" name="city" placeholder="City">
+            <input id="state" type="text" name="state" placeholder="State">
+          </div>
+          <input id="phone" type="tel" name="phone" placeholder="Phone Number" required pattern="\(\d{3}\) \d{3}-\d{4}">
+          <input id="email" type="email" name="email" placeholder="Email Address" required>
+          <button id="submit-button" type="submit" name="submit" value="submit">ENTER TO WIN</button>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
