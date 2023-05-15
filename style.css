@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: url('./Assets/bg-img.png') center center / contain repeat;
+  background-color: #ecf8fb;
+  animation: background-color 5s ease-in-out infinite;
+  font-family: Helvetica;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container header {
+  background-color: #545253;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+
+.container header img {
+  width: 171px;
+  height: 37px;
+  margin: 20px 0;
+}
+
+@keyframes background-color {
+  0% {
+    background-color: #ecf8fb;
+  }
+
+  50% {
+    background-color: #efefef;
+  }
+
+  100% {
+    background-color: #ecf8fb;
+  }
+}
