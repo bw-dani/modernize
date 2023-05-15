@@ -8,19 +8,21 @@
   --link-text-color: #6EB7C2;
   --accent-color: #A0BC57;
   --button-color: #F6931D;
+  --font-family:  Helvetica,sans-serif;  
+  --secondary-font-family: 'Montserrat', sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
   background: url('./Assets/bg-img.png') center center / contain repeat;
   background-color: var(--bg-primary-color);
   animation: background-color 5s ease-in-out infinite;
-  font-family: Helvetica;
-  font-weight: 500;
+  font-family: var(--font-family);
+  font-weight: 400;
 }
 
 .container {
@@ -43,13 +45,26 @@ body {
   margin: 20px 0;
 }
 
+.container .content::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 187px;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
 .container .content {
   padding: 15px;
 }
 
 .form-section {
+  margin:0;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 7px 14px 0 rgba(110,183,194,37%);
 }
 
 .form-section h1 {
@@ -58,21 +73,23 @@ body {
   background-color: var(--headers-bg-color);
   color: var(--white);
   font-size: 18px;
-  font-weight: 500;
+  font-family: var(--secondary-font-family);
+  font-weight: 600;
   line-height: 24px;
   text-align: center;
 }
 
 .form-section form {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 15px 25px 22px 25px;
+  padding: 15px 23px 22px 24px;
   background-color: var(--white);
 }
 
 form input {
   padding: 0 10px;
+  margin-bottom: 20px;
   height: 50px;
   border: 1px solid #d8d8d8;
   border-radius: 4px;
@@ -82,6 +99,7 @@ form input {
 form input::placeholder{
   color: var(--text-medium);
   font-size: 16px;
+  font-family: var(--font-family);
 }
 
 form input[type="text"] , [type="email"] , [type="tel"]{
@@ -91,12 +109,12 @@ form input[type="text"] , [type="email"] , [type="tel"]{
 form .address {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 11px;
 }
 
 .address input {
   width: 100%;
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 
 .address input:first-child {
@@ -112,24 +130,100 @@ form .error {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  text-align: left;
+  text-align: center;
 }
 
 form button {
   padding: 0;
+  width: 100%;
+  max-width: 333px;
+  align-self: center;
   height: 48px;
   border: none;
   border-radius: 30px;
   background-color: var(--button-color);
   color: var(--white);
   font-size: 16px;
-  font-weight: 500;
+  font-family: var(--secondary-font-family);
+  font-weight: 400;
   cursor: pointer;
 }
 
 form button:disabled{
   background-color: var(--text-medium);
   cursor: not-allowed;
+}
+
+.ad-section fieldset{
+  padding: 0;
+  border: 2px solid var(--accent-color);
+}
+
+fieldset legend {
+  font-size: 15px;
+  color: var(--text-dark);
+  padding: 0 18px;
+}
+
+.ad-section{
+  margin: 35px auto;
+  max-width: 404px;
+}
+
+.ad-section .ad {
+  margin: 15px;
+  padding:10px 15px 30px 15px;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.ad span {
+  color: var(--accent-color);
+  font-size: 12px;
+  font-family: var(--secondary-font-family);
+  font-weight: 600;
+}
+
+.ad h2 {
+  margin: 5px 0 12px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-dark);
+
+}
+
+.ad p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.ad p a {
+  color: var(--link-text-color);
+  text-decoration: none;
+}
+
+@media (min-width: 767px) {
+  .container .content{
+    max-width: 670px ;
+    padding: 30px 0;
+  }
+
+  .form-section form {
+    padding: 29px 54px 27px 55px;
+  }
+
+  form .address{
+    gap: 26px;
+  }
+
+  .ad-section .ad{
+    padding: 10px 15px 64px 15px;
+  }
+
+  fieldset legend {
+    padding: 0 55px;
+  }
+  
 }
 
 @keyframes background-color {
